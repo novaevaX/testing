@@ -1,5 +1,8 @@
 package org.example;
 
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
+
 import org.example.pojos.PostPojo;
 import org.junit.Test;
 import io.restassured.RestAssured;
@@ -63,6 +66,7 @@ public class FirstExampleTests {
                 .extract()
                 .jsonPath()
                 .getObject("", PostPojo.class);
+        assertThat(postPojo.getUserId(), equalTo(1));
     }
 
     //фильтрация по параметрам - userId - String

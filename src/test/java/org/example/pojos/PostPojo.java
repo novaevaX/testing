@@ -37,4 +37,14 @@ public class PostPojo {
     public String getBody() {
         return body;
     }
+
+    @Override
+    public String toString() {
+        return "PostPojo{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                '}';
+    }
 }
